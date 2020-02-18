@@ -8,6 +8,7 @@ thingsRouter
   .get((req, res, next) => {
     ThingsService.getAllThings(req.app.get('db'))
       .then(things => {
+        console.log(things)
         res.json(ThingsService.serializeThings(things))
       })
       .catch(next)

@@ -242,7 +242,7 @@ function seedUsers(db, users) {
       //update the auto sequence to stay in sync
       db.raw(
         `SELECT setval('thingful_users_id_seq', ?)`,
-        [users[users.length -1].id],
+        [users[users.length - 1].id],
       )
     )
 }
@@ -255,7 +255,7 @@ function seedThingsTables(db, users, things, reviews=[]) {
     //update the auto sequence to match the forced id values
     await trx.raw(
       `SELECT setval('thingful_things_id_seq', ?)`,
-      [things[things.length -1].id]
+      [things[things.length - 1].id]
     )
   })
 }
